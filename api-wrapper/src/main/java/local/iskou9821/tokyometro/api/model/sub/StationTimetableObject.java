@@ -1,4 +1,4 @@
-package local.iskou9821.tokyometro.api.model;
+package local.iskou9821.tokyometro.api.model.sub;
 
 import local.iskou9821.tokyometro.api.json.TimeDeserializer;
 import local.iskou9821.tokyometro.api.model.property.Time;

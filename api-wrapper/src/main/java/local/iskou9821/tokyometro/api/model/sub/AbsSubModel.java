@@ -1,4 +1,4 @@
-package local.iskou9821.tokyometro.api.model;
+package local.iskou9821.tokyometro.api.model.sub;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
