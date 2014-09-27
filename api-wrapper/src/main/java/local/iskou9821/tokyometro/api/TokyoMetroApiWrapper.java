@@ -76,10 +76,9 @@ public class TokyoMetroApiWrapper {
 		
 		ObjectMapper m = new ObjectMapper();
 		
-		@SuppressWarnings("unchecked")
-		List<T> res;
 		try {
-			res = (List<T>)Lists.newArrayList((T[])m.readValue(json, ts.getClass()));
+			@SuppressWarnings("unchecked")
+			List<T> res = (List<T>)Lists.newArrayList((T[])m.readValue(json, ts.getClass()));
 			return res;
 		} catch (IOException e) {
 			throw new IllegalStateException(e);

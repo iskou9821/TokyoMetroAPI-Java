@@ -13,6 +13,7 @@ import local.iskou9821.tokyometro.api.model.Train;
 import local.iskou9821.tokyometro.api.model.TrainInformation;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 public class WrapperTest2 extends AbsApiTest {
 	private TokyoMetroApiWrapper w() {
@@ -91,7 +92,7 @@ public class WrapperTest2 extends AbsApiTest {
 		each(l, new CB<StationFacility>() {
 			@Override
 			public void func(StationFacility data) {
-				System.out.println(ToStringBuilder.reflectionToString(data));
+				System.out.println(ToStringBuilder.reflectionToString(data, ToStringStyle.MULTI_LINE_STYLE, true));
 			}
 		});		
 	}
