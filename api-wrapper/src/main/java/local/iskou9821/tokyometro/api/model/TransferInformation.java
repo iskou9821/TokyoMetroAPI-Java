@@ -1,9 +1,7 @@
 package local.iskou9821.tokyometro.api.model;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class TransferInformation extends AbsSubModel {
 	@JsonProperty("odpt:railway")
 	private String railway;
