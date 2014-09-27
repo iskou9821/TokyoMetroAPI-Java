@@ -5,6 +5,9 @@ import java.util.List;
 
 import local.iskou9821.tokyometro.api.json.GeoUrlDeserializer;
 import local.iskou9821.tokyometro.api.model.property.GeoDocumentLink;
+import local.iskou9821.tokyometro.api.model.sub.StationOrder;
+import local.iskou9821.tokyometro.api.model.sub.TravelTime;
+import local.iskou9821.tokyometro.api.model.sub.WomenOnlyCar;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonTypeName;
