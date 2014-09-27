@@ -8,6 +8,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import local.iskou9821.tokyometro.api.config.DefaultConfiguration;
 import local.iskou9821.tokyometro.api.model.Station;
+import local.iskou9821.tokyometro.api.model.Train;
 import local.iskou9821.tokyometro.api.util.QueryParam;
 
 public class WrapperTest extends AbsApiTest {
@@ -36,4 +37,18 @@ public class WrapperTest extends AbsApiTest {
 			System.out.println(ToStringBuilder.reflectionToString(s));
 		}
 	}	
+	
+	public void test03() throws IOException {
+		TokyoMetroApiWrapper w = new TokyoMetroApiWrapper(
+						new DefaultConfiguration(getConsumerKeyProvider()));
+		
+		List<Train> l = w
+				.queryParam("odpt:railway", "odpt.Railway:TokyoMetro.Ginza")
+				.getResources(Train.class);
+		
+		for (Train t : l) {
+			System.out.println(ToStringBuilder.reflectionToString(t));
+		}
+	}	
+	
 }
