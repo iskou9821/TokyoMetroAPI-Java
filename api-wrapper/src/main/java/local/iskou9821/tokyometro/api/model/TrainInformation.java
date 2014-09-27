@@ -2,19 +2,17 @@ package local.iskou9821.tokyometro.api.model;
 
 import java.util.Date;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonTypeName;
 
 @JsonTypeName("odpt:TrainInformation")
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class TrainInformation extends AbsSubModel  {
-	@JsonProperty("odpt:operatorr")
+public class TrainInformation extends AbsMainModel  {
+	@JsonProperty("odpt:operator")
 	private String operator;
 	
 	@JsonProperty("dc:date")
 	private Date date;
-	
+		
 	@JsonProperty("dct:valid")
 	private Date valid;
 	
