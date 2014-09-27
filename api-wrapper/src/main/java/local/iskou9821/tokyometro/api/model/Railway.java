@@ -3,8 +3,8 @@ package local.iskou9821.tokyometro.api.model;
 import java.util.Date;
 import java.util.List;
 
-import local.iskou9821.tokyometro.api.json.GeoJsonDeserializer;
-import local.iskou9821.tokyometro.api.model.property.GeoJson;
+import local.iskou9821.tokyometro.api.json.GeoUrlDeserializer;
+import local.iskou9821.tokyometro.api.model.property.GeoDocumentLink;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonTypeName;
@@ -28,8 +28,8 @@ public class Railway extends AbsMainModel {
 	private String lineCode;
 	
 	@JsonProperty("ug:region")
-	@JsonDeserialize(using=GeoJsonDeserializer.class)
-	private GeoJson region;
+	@JsonDeserialize(using=GeoUrlDeserializer.class)
+	private GeoDocumentLink region;
 	
 	@JsonProperty("odpt:stationOrder")
 	private List<StationOrder> stationOrders;
@@ -88,10 +88,10 @@ public class Railway extends AbsMainModel {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public GeoJson getRegion() {
+	public GeoDocumentLink getRegion() {
 		return region;
 	}
-	public void setRegion(GeoJson region) {
+	public void setRegion(GeoDocumentLink region) {
 		this.region = region;
 	}
 }
