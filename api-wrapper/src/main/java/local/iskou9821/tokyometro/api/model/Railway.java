@@ -1,13 +1,16 @@
 package local.iskou9821.tokyometro.api.model;
 
+import java.util.Date;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import local.iskou9821.tokyometro.api.json.GeoJsonDeserializer;
+import local.iskou9821.tokyometro.api.model.property.GeoJson;
+
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonTypeName;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
 @JsonTypeName("odpt:Railway")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Railway extends AbsMainModel {
 	@JsonProperty("owl:sameAs")
 	private String sameAs;
@@ -18,8 +21,15 @@ public class Railway extends AbsMainModel {
 	@JsonProperty("odpt:operator")
 	private String operator;
 	
+	@JsonProperty("dc:date")
+	private Date date;
+	
 	@JsonProperty("odpt:lineCode")
 	private String lineCode;
+	
+	@JsonProperty("ug:region")
+	@JsonDeserialize(using=GeoJsonDeserializer.class)
+	private GeoJson region;
 	
 	@JsonProperty("odpt:stationOrder")
 	private List<StationOrder> stationOrders;
@@ -71,5 +81,17 @@ public class Railway extends AbsMainModel {
 	}
 	public void setWomenOnlyCars(List<WomenOnlyCar> womenOnlyCars) {
 		this.womenOnlyCars = womenOnlyCars;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public GeoJson getRegion() {
+		return region;
+	}
+	public void setRegion(GeoJson region) {
+		this.region = region;
 	}
 }

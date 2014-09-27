@@ -1,4 +1,4 @@
-package local.iskou9821.tokyometro.api.model;
+package local.iskou9821.tokyometro.api.model.property;
 
 import java.text.DateFormat;
 import java.text.ParseException;

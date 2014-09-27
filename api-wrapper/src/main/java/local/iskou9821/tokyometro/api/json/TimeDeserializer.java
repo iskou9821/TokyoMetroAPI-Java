@@ -3,7 +3,7 @@ package local.iskou9821.tokyometro.api.json;
 import java.io.IOException;
 import java.text.DateFormat;
 
-import local.iskou9821.tokyometro.api.model.Time;
+import local.iskou9821.tokyometro.api.model.property.Time;
 
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.JsonProcessingException;

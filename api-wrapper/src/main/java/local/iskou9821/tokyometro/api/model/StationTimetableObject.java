@@ -1,6 +1,7 @@
 package local.iskou9821.tokyometro.api.model;
 
 import local.iskou9821.tokyometro.api.json.TimeDeserializer;
+import local.iskou9821.tokyometro.api.model.property.Time;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.map.annotate.JsonDeserialize;

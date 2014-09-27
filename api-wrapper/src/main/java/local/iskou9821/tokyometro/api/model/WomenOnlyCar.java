@@ -1,9 +1,12 @@
 package local.iskou9821.tokyometro.api.model;
 
-import java.util.Date;
 import java.util.List;
 
+import local.iskou9821.tokyometro.api.json.TimeDeserializer;
+import local.iskou9821.tokyometro.api.model.property.Time;
+
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 
 public class WomenOnlyCar extends AbsSubModel {
 	@JsonProperty("odpt:fromStation")
@@ -16,10 +19,12 @@ public class WomenOnlyCar extends AbsSubModel {
 	private String operationDay;
 	
 	@JsonProperty("odpt:availableTimeFrom")
-	private Date availableTimeFrom;
+	@JsonDeserialize(using=TimeDeserializer.class)
+	private Time availableTimeFrom;
 	
 	@JsonProperty("odpt:availableTimeUntil")
-	private Date availableTimeUntil;
+	@JsonDeserialize(using=TimeDeserializer.class)
+	private Time availableTimeUntil;
 	
 	@JsonProperty("odpt:carComposition")
 	private Integer carComposition;
@@ -51,19 +56,19 @@ public class WomenOnlyCar extends AbsSubModel {
 		this.operationDay = operationDay;
 	}
 
-	public Date getAvailableTimeFrom() {
+	public Time getAvailableTimeFrom() {
 		return availableTimeFrom;
 	}
 
-	public void setAvailableTimeFrom(Date availableTimeFrom) {
+	public void setAvailableTimeFrom(Time availableTimeFrom) {
 		this.availableTimeFrom = availableTimeFrom;
 	}
 
-	public Date getAvailableTimeUntil() {
+	public Time getAvailableTimeUntil() {
 		return availableTimeUntil;
 	}
 
-	public void setAvailableTimeUntil(Date availableTimeUntil) {
+	public void setAvailableTimeUntil(Time availableTimeUntil) {
 		this.availableTimeUntil = availableTimeUntil;
 	}
 
