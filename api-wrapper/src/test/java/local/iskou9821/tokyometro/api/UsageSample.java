@@ -1,21 +1,24 @@
-# 東京メトロAPIのJavaラッパー
+package local.iskou9821.tokyometro.api;
 
-## 概要
-東京メトロのAPIをJavaから利用しやすくするためのラッパー的なものを作ろうとしています。
+import java.io.IOException;
+import java.util.List;
 
-Jersey-clientとjacksonを主に利用します。
+import junit.framework.TestCase;
 
-## 作る予定のもの
- * 取得可能データのEntity定義(＊自分の使う範囲で)
- * Entity定義を元にデータを取得する仕組み
- * クエリーパラメータの組み立ての面倒を少なくするための仕組み
- 
-気力の続く限り作ります。。。
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
-## サンプル
-こんな感じです。  
+import local.iskou9821.tokyometro.api.config.Configuration;
+import local.iskou9821.tokyometro.api.config.DefaultConfiguration;
+import local.iskou9821.tokyometro.api.model.Station;
+import local.iskou9821.tokyometro.api.util.impl.PropertyFileConsumerKeyProviderImpl;
 
-    	/*
+public class UsageSample extends TestCase {
+	/**
+	 * 使い方の説明です。
+	 * @throws IOException 
+	 */
+	public void testGetStatin() throws IOException {
+		/*
 		 * consumerKeyをプロパティファイルから取得します。
 		 * プロパティファイルのサンプルはsrc/test/resourcesに配置してます。
 		 * 環境編集からconsumerKeyを取得する場合はEnvParamConsumerKeyProviderImplというクラスがあります。
@@ -27,7 +30,6 @@ Jersey-clientとjacksonを主に利用します。
 		/*
 		 * クエリーの例:
 		 * 銀座線 上野駅の情報を取得します。
-		 * get()の引数には欲しいオブジェクトのクラスを指定します。
 		 * 　＊パラメータの意味については東京メトロの開発者サイトを参照してください。
 		 * 　　書き方は、まだまだ改善の余地ありです・・・
 		 */
@@ -38,7 +40,5 @@ Jersey-clientとjacksonを主に利用します。
 		for (Station item : items) {
 			System.out.println(ToStringBuilder.reflectionToString(item));
 		}
-		
-## TODO
- * 対応するオブジェクトとプロパティの拡充。
- * クエリーパラメータを扱うのに便利な仕組み。
+	}
+}

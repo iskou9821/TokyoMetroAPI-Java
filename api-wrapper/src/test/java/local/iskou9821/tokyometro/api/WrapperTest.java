@@ -18,7 +18,7 @@ public class WrapperTest extends AbsApiTest {
 		
 		List<QueryParam> params = new ArrayList<QueryParam>();
 		params.add(new QueryParam("owl:sameAs", "odpt.Station:TokyoMetro.Ginza.Ueno"));
-		List<Station> l = w.getResources(Station.class, params);
+		List<Station> l = w.get(Station.class, params);
 		for (Station s : l) {
 			System.out.println(ToStringBuilder.reflectionToString(s));
 		}
@@ -31,7 +31,7 @@ public class WrapperTest extends AbsApiTest {
 		List<Station> l = w
 				.queryParam("owl:sameAs", "odpt.Station:TokyoMetro.Ginza.Ueno")
 				.queryParam("odpt:operator", "TokyoMetro")
-				.getResources(Station.class);
+				.get(Station.class);
 		
 		for (Station s : l) {
 			System.out.println(ToStringBuilder.reflectionToString(s));
@@ -44,7 +44,7 @@ public class WrapperTest extends AbsApiTest {
 		
 		List<Train> l = w
 				.queryParam("odpt:railway", "odpt.Railway:TokyoMetro.Ginza")
-				.getResources(Train.class);
+				.get(Train.class);
 		
 		for (Train t : l) {
 			System.out.println(ToStringBuilder.reflectionToString(t));

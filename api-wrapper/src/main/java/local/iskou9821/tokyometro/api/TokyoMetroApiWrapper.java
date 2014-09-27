@@ -44,11 +44,11 @@ public class TokyoMetroApiWrapper {
 		return new TokyoMetroApiWrapper(configuration, innerParams);
 	}
 	
-	public <T> List<T> getResources(Class<T> clazz) throws IOException {
-		return this.getResources(clazz, innerParams);
+	public <T> List<T> get(Class<T> clazz) throws IOException {
+		return this.get(clazz, innerParams);
 	}
 	
-	public <T> List<T> getResources(Class<T> clazz, List<QueryParam> params) throws IOException {
+	public <T> List<T> get(Class<T> clazz, List<QueryParam> params) throws IOException {
 		
 		Client client = Client.create();
 		//ClientResponse s =  
