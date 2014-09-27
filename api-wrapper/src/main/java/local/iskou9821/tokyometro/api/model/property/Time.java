@@ -12,6 +12,7 @@ public class Time {
 	private Date date;
 	private Integer hour;
 	private Integer min;
+	private String caption;
 	
 	public Time() {
 		super();
@@ -19,23 +20,37 @@ public class Time {
 	public Time(String str) {
 		super();
 		
-		DateFormat fmt = Formats.get();
-		if (fmt == null) {
-			fmt = new SimpleDateFormat("hh:mm");
-			Formats.set(fmt);
-		}
-		
+		caption = str;
 		try {
-			date = fmt.parse(str);
-		} catch (ParseException e) {
-			throw new IllegalArgumentException(e);
+			DateFormat fmt = Formats.get();
+			if (fmt == null) {
+				fmt = new SimpleDateFormat("hh:mm");
+				Formats.set(fmt);
+			}
+			
+			try {
+				date = fmt.parse(str);
+			} catch (ParseException e) {
+				throw new IllegalArgumentException(e);
+			}
+			
+			Calendar cal = Calendar.getInstance();
+			cal.setTime(date);
+			
+			hour = cal.get(Calendar.HOUR);
+			min = cal.get(Calendar.MINUTE);
+		} catch (Exception e) {
+			date = null;
+			hour = null;
+			min = null;
 		}
-		
-		Calendar cal = Calendar.getInstance();
-		cal.setTime(date);
-		
-		hour = cal.get(Calendar.HOUR);
-		min = cal.get(Calendar.MINUTE);
+	}
+	
+	public String getCaption() {
+		return caption;
+	}
+	public void setCaption(String caption) {
+		this.caption = caption;
 	}
 	public Date getDate() {
 		return date;

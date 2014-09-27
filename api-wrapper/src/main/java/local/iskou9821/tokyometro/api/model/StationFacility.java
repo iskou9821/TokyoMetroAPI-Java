@@ -1,16 +1,18 @@
 package local.iskou9821.tokyometro.api.model;
 
+import java.util.Date;
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonTypeName;
 
 @JsonTypeName("odpt:StationFacility")
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class StationFacility extends AbsMainModel {
 	@JsonProperty("owl:sameAs")
 	private String sameAs;
+	
+	@JsonProperty("dc:date")
+	private Date date;
 	
 	@JsonProperty("odpt:barrierfreeFacility")
 	private List<BarrierfreeFacility> barrierfreeFacilities;
@@ -24,6 +26,14 @@ public class StationFacility extends AbsMainModel {
 
 	public void setSameAs(String sameAs) {
 		this.sameAs = sameAs;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public List<BarrierfreeFacility> getBarrierfreeFacilities() {

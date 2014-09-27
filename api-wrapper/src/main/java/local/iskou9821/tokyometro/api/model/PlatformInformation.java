@@ -2,10 +2,8 @@ package local.iskou9821.tokyometro.api.model;
 
 import java.util.List;
 
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class PlatformInformation extends AbsSubModel  {
 	@JsonProperty("odpt:carComposition")
 	private Integer carComposition;
