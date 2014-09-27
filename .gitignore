@@ -1,3 +1,6 @@
+# Ignore config files
+tokyo-metro.properties
+
 # Ignore bundler config.
 /.bundle
 

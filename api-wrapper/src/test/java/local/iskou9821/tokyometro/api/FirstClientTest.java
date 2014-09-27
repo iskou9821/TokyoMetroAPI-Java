@@ -1,8 +1,6 @@
 package local.iskou9821.tokyometro.api;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 import junit.framework.TestCase;
 import local.iskou9821.tokyometro.api.model.Station;
@@ -14,7 +12,8 @@ import com.sun.jersey.api.client.ClientHandlerException;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.UniformInterfaceException;
 
-public class ClientTest extends TestCase {
+public class FirstClientTest extends TestCase {
+	//とりあえず実験用で作ったやつ。メモとして残しておくだけ。。。
 	public void test01() {
 		String key = System.getProperty("TokyoMetro.consumerKey");
 		
