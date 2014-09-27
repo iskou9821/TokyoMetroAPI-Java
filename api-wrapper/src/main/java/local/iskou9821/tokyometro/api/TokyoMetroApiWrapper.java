@@ -44,11 +44,11 @@ public class TokyoMetroApiWrapper {
 		return new TokyoMetroApiWrapper(configuration, innerParams);
 	}
 	
-	public <T> List<T> get(Class<T> clazz) throws IOException {
+	public <T> List<T> get(Class<T> clazz) {
 		return this.get(clazz, innerParams);
 	}
 	
-	public <T> List<T> get(Class<T> clazz, List<QueryParam> params) throws IOException {
+	public <T> List<T> get(Class<T> clazz, List<QueryParam> params)  {
 		
 		Client client = Client.create();
 		//ClientResponse s =  
@@ -77,8 +77,12 @@ public class TokyoMetroApiWrapper {
 		ObjectMapper m = new ObjectMapper();
 		
 		@SuppressWarnings("unchecked")
-		List<T> res =  (List<T>)Lists.newArrayList((T[])m.readValue(json, ts.getClass()));
-		
-		return res;
+		List<T> res;
+		try {
+			res = (List<T>)Lists.newArrayList((T[])m.readValue(json, ts.getClass()));
+			return res;
+		} catch (IOException e) {
+			throw new IllegalStateException(e);
+		}		
 	}
 }
