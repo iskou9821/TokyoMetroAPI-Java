@@ -6,7 +6,7 @@ import org.codehaus.jackson.annotate.JsonTypeName;
 
 @JsonTypeName("odpt:Station")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Station {
+public class Station extends AbsMainModel {
 	@JsonProperty("owl:sameAs")
 	private String sameAs;
 	
