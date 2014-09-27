@@ -7,8 +7,12 @@ import org.codehaus.jackson.annotate.JsonProperty;
 public class AbsMainModel {
 	@JsonProperty("@context")
 	private String context;
+	
 	@JsonProperty("@id")
 	private String id;
+	
+	@JsonProperty("@type")
+	private String type;
 	
 	@Override
 	public String toString() {
