@@ -3,6 +3,9 @@ package local.iskou9821.tokyometro.api.model;
 import java.util.Date;
 import java.util.List;
 
+import local.iskou9821.tokyometro.api.model.sub.BarrierfreeFacility;
+import local.iskou9821.tokyometro.api.model.sub.PlatformInformation;
+
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonTypeName;
 

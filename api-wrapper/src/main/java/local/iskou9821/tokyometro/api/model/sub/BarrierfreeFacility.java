@@ -1,6 +1,8 @@
-package local.iskou9821.tokyometro.api.model;
+package local.iskou9821.tokyometro.api.model.sub;
 
 import java.util.List;
+
+import local.iskou9821.tokyometro.api.model.AbsMainModel;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 

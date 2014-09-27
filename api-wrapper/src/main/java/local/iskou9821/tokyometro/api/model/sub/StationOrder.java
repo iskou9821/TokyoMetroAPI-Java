@@ -1,4 +1,4 @@
-package local.iskou9821.tokyometro.api.model;
+package local.iskou9821.tokyometro.api.model.sub;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
