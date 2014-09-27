@@ -1,7 +1,8 @@
-package local.iskou9821.tokyometro.api;
+package local.iskou9821.tokyometro.api.exam;
 
 import java.io.IOException;
 
+import local.iskou9821.tokyometro.api.AbsApiTest;
 import local.iskou9821.tokyometro.api.model.Station;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;

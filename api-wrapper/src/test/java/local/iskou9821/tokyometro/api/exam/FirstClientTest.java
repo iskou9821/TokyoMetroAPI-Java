@@ -1,4 +1,4 @@
-package local.iskou9821.tokyometro.api;
+package local.iskou9821.tokyometro.api.exam;
 
 import java.io.IOException;
 
