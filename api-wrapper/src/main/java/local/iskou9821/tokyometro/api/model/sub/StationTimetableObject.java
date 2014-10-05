@@ -26,8 +26,8 @@ public class StationTimetableObject extends AbsSubModel {
 	@JsonProperty("odpt:carComposition")
 	private Integer carComposition;
 	
-	@JsonProperty("odpt:notes")
-	private String notes;
+	@JsonProperty("odpt:note")
+	private String note;
 
 	public Time getDepartureTime() {
 		return departureTime;
@@ -77,11 +77,11 @@ public class StationTimetableObject extends AbsSubModel {
 		this.carComposition = carComposition;
 	}
 
-	public String getNotes() {
-		return notes;
+	public String getNote() {
+		return note;
 	}
 
-	public void setNote(String notes) {
-		this.notes = notes;
+	public void setNote(String note) {
+		this.note = note;
 	}
 }
